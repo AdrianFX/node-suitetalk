@@ -2,7 +2,7 @@
 
 const SearchBasic = require("./common/searchBasic");
 
-class timeEntrySearchBasic extends SearchBasic {
+class TimeEntrySearchBasic extends SearchBasic {
 
     constructor() {
         super();
