@@ -47,7 +47,8 @@ class Duration extends BaseObject {
         }
 
         const subNode = {};
-        subNode[`${"platformCore"}:${"DurationUnit"}`]["$value"] = this.unit;
+        const subField = "durationUnit";
+        subNode[`${this._type}:${subField}`]["$value"] = this.unit;
 
         node[type]["$timeSpan"] = this.timeSpan;
         node[type]["$unit"] = subNode;
