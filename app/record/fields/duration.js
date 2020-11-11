@@ -1,7 +1,7 @@
 "use strict";
 
 const BaseObject = require("../../baseObject");
-const Field = require("common/field");
+const Field = require("./common/field");
 
 class Duration extends BaseObject {
 
