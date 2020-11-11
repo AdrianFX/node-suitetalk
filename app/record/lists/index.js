@@ -10,6 +10,8 @@ const Lists = {
     SalesOrderItemList: require("./salesOrderItemList"),
     TimeEntry: require("./timeEntry"),
     TimeEntryList: require("./timeEntryList"),
+    TimeBill: require("./timeBill"),
+    TimeBillList: require("./timeBillList"),
 
 };
 
