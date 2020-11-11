@@ -1,6 +1,7 @@
 "use strict";
 
 const BaseObject = require("../../baseObject");
+const Field = require("common/field");
 
 class Duration extends BaseObject {
 
@@ -8,9 +9,7 @@ class Duration extends BaseObject {
         super();
         this.field = undefined;
         this.timeSpan = undefined;
-        this.unit = "hour";
         this._fieldType = "number";
-//        this._type = "Duration";
     }
 
     _getSoapType() {
@@ -18,7 +17,13 @@ class Duration extends BaseObject {
     }
 
     _getAttributes() {
-        return "";
+
+        const attr = {
+            "type": "duration",
+            "xsi:type": "platformCore:Duration",
+        };
+
+        return attr;
     }
 
     getNode() {
@@ -46,15 +51,12 @@ class Duration extends BaseObject {
             node[type]["$attributes"] = attributes;
         }
 
-        const subNode = {};
-        const subField = "unit";
-        const subTypeName = "durationUnit";
-        const subType = `${this._type}:${subField}`;
-        subNode[subType] = {};
-        subNode[subType]["$value"] = this.unit;
+        const unit = new Field();
+        unit.field = "unit";
+        unit.value = "hour";
 
         node[type]["timeSpan"] = this.timeSpan;
-        node[type]["unit"] = subNode;
+        node[type]["unit"] = unit;
 
         return node;
     }
