@@ -10,6 +10,7 @@ const Fields = {
     StringCustomFieldRef: require("./stringCustomFieldRef"),
     StringRef: require("./stringRef"),
     Field: require("./common/field"),
+    Duration: require("./duration"),
 };
 
 module.exports = Fields;
