@@ -1,15 +1,15 @@
 "use strict";
 
 const BaseObject = require("../../baseObject");
-const Field = require("./common/field");
 
 class Duration extends BaseObject {
 
     constructor() {
         super();
-        this.field = undefined;
+        this.type = "duration";
         this.timeSpan = undefined;
-        this._fieldType = "number";
+        this.unit = "hour";
+        this.field = undefined;
     }
 
     _getSoapType() {
@@ -19,21 +19,31 @@ class Duration extends BaseObject {
     _getAttributes() {
 
         const attr = {
-            "type": "duration",
+            "timeSpan": this.timeSpan,
+            "unit": this.unit,
+            "type": this.type,
             "xsi:type": "platformCore:Duration",
         };
+
+        if (!this.timeSpan) {
+            delete attr.timespan;
+        }
+
+        if (!this.unit) {
+            delete attr.unit;
+        }
+
+        if (!this.type) {
+            delete attr.type;
+        }
 
         return attr;
     }
 
     getNode() {
 
-        if (!this.field) {
-            throw new Error("Field name not defined");
-        }
-
-        if (typeof this.timeSpan !== this._fieldType) {
-            throw new Error(`Invalid type value ${typeof this.value} for field ${this.field}`);
+        if (!this.timeSpan || !this.unit) {
+            throw new Error("TimeSpan or Unit are not defined");
         }
 
         const attributes = this._getAttributes();
@@ -50,13 +60,6 @@ class Duration extends BaseObject {
         if (attributes) {
             node[type]["$attributes"] = attributes;
         }
-
-        const unit = new Field();
-        unit.field = "unit";
-        unit.value = "hour";
-
-        node[type]["timeSpan"] = this.timeSpan;
-        node[type]["unit"] = unit;
 
         return node;
     }
