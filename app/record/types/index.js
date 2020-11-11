@@ -18,6 +18,9 @@ const Types = {
     RecordRef: require("./recordRef"),
     SalesOrder: require("./salesOrder"),
     Vendor: require("./vendor"),
+    TimeEntry: require("./timeEntry"),
+    Record: require("./common/record"),
+    Reference: require("./common/reference"),
 
 };
 

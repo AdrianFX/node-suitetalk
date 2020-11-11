@@ -8,6 +8,8 @@ const Lists = {
     NullFieldList: require("./nullFieldList"),
     SalesOrderItem: require("./salesOrderItem"),
     SalesOrderItemList: require("./salesOrderItemList"),
+    TimeEntry: require("./timeEntry"),
+    TimeEntryList: require("./timeEntryList"),
 
 };
 

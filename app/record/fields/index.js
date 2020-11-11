@@ -9,7 +9,7 @@ const Fields = {
     SelectCustomFieldRef: require("./selectCustomFieldRef"),
     StringCustomFieldRef: require("./stringCustomFieldRef"),
     StringRef: require("./stringRef"),
-
+    Field: require("./common/field"),
 };
 
 module.exports = Fields;

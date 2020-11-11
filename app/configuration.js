@@ -104,6 +104,7 @@ function _validateConfiguration(configuration) {
  * @property {string} tranGeneral
  * @property {string} tranInvt
  * @property {string} tranSales
+ * @property {string} tranEmp
  */
 
 /**
@@ -130,6 +131,7 @@ function _getNameSpaces(configuration) {
         tranGeneral: `urn:general_${configuration.apiVersion}.transactions.webservices.netsuite.com`,
         tranInvt: `urn:inventory_${configuration.apiVersion}.transactions.webservices.netsuite.com`,
         tranSales: `urn:sales_${configuration.apiVersion}.transactions.webservices.netsuite.com`,
+        tranEmp: `urn:employees_${configuration.apiVersion}.transactions.webservices.netsuite.com`,
     };
 }
 
