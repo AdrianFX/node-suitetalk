@@ -9,7 +9,8 @@ class Duration extends BaseObject {
         this.field = undefined;
         this.timeSpan = undefined;
         this.unit = "hour";
-        this._fieldType = double;
+        this._fieldType = "double";
+        this._type = "platformCore";
     }
 
     _getSoapType() {
