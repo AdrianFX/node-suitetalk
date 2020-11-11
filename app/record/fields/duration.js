@@ -10,7 +10,7 @@ class Duration extends BaseObject {
         this.timeSpan = undefined;
         this.unit = "hour";
         this._fieldType = "number";
-        this._type = "platformCore";
+//        this._type = "Duration";
     }
 
     _getSoapType() {
@@ -47,13 +47,14 @@ class Duration extends BaseObject {
         }
 
         const subNode = {};
-        const subField = "durationUnit";
+        const subField = "unit";
+        const subTypeName = "durationUnit";
         const subType = `${this._type}:${subField}`;
         subNode[subType] = {};
         subNode[subType]["$value"] = this.unit;
 
-        node[type]["$timeSpan"] = this.timeSpan;
-        node[type]["$unit"] = subNode;
+        node[type]["timeSpan"] = this.timeSpan;
+        node[type]["unit"] = subNode;
 
         return node;
     }
