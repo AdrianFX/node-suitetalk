@@ -9,7 +9,7 @@ class Duration extends BaseObject {
         this.field = undefined;
         this.timeSpan = undefined;
         this.unit = "hour";
-        this._fieldType = "double";
+        this._fieldType = "number";
         this._type = "platformCore";
     }
 
