@@ -61,7 +61,7 @@ class Duration extends BaseObject {
         if (attributes) {
 //            node[type]["$attributes"] = attributes;
         }
-            node[type]["timeSpan"] = this.timeSpan;
+            node[type]["platformCore:timeSpan"] = this.timeSpan;
             node[type]["unit"] = this.unit;
 
         return node;
