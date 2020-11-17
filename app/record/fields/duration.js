@@ -37,7 +37,8 @@ class Duration extends BaseObject {
             delete attr.type;
         }
 
-        return attr;
+//        return attr;
+        return "";
     }
 
     getNode() {
@@ -58,8 +59,10 @@ class Duration extends BaseObject {
         node[type] = {};
 
         if (attributes) {
-            node[type]["$attributes"] = attributes;
+//            node[type]["$attributes"] = attributes;
         }
+            node[type]["timeSpan"] = this.timeSpan;
+            node[type]["unit"] = this.unit;
 
         return node;
     }
