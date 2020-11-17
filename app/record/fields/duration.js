@@ -62,7 +62,7 @@ class Duration extends BaseObject {
 //            node[type]["$attributes"] = attributes;
         }
             node[type]["platformCore:timeSpan"] = this.timeSpan;
-            node[type]["unit"] = this.unit;
+            node[type]["platformCore:unit"] = this.unit;
 
         return node;
     }
