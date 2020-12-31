@@ -6,7 +6,7 @@ class Employee extends Record {
 
     constructor() {
         super();
-        this._type = "listRel";
+        this._type = "listEmp";
         this._name = "Employee";
     }
 }
