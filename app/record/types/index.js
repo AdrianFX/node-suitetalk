@@ -20,6 +20,7 @@ const Types = {
     Vendor: require("./vendor"),
     TimeEntry: require("./timeEntry"),
     TimeBill: require("./timeBill"),
+    Employee: require("./employee"),
     Record: require("./common/record"),
     Reference: require("./common/reference"),
 
